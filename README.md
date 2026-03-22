@@ -1,80 +1,59 @@
-# Academic Project Page Template
+# RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+**Accepted to CVPR 2026.**
 
-A clean, responsive template for academic project pages.
+This repository hosts the **project page** for our paper on real-time anomaly monitoring for robotic manipulation. RC-NF is a robot-conditioned normalizing flow that runs as a plug-and-play monitor for vision-language-action (VLA) policies, producing anomaly scores in **under 100 ms** on real hardware.
 
+**Project page:** [https://heikaishuizz.github.io/RC-NF/](https://heikaishuizz.github.io/RC-NF/)  
+**Paper (arXiv):** [2603.11106](https://arxiv.org/abs/2603.11106)
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Authors
 
+Shijie Zhou<sup>1,2</sup>, Bin Zhu<sup>3</sup>, Jiarui Yang<sup>1,2</sup>, Xiangyu Zhao<sup>1,2</sup>, Jingjing Chen<sup>1,2,*</sup>, Yu-Gang Jiang<sup>1,2</sup>
 
+<sup>1</sup> Institute of Trustworthy Embodied AI, Fudan University  
+<sup>2</sup> Shanghai Key Laboratory of Multimodal Embodied AI  
+<sup>3</sup> Singapore Management University  
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## Abstract (short)
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+VLA models trained by imitation learning often fail under out-of-distribution (OOD) conditions. RC-NF monitors whether the joint distribution of **robot states** and **task-relevant object trajectories** matches normal execution using a **conditional normalizing flow** trained only on successful demonstrations. A key component is **RCPQNet** (Robot-Conditioned Point Query Network), an affine coupling layer that conditions on task embeddings and robot state while processing **SAM2**-based point sets. We also introduce **LIBERO-Anomaly-10**, a benchmark with gripper open, slippage, and spatial misalignment anomalies. RC-NF achieves strong AUC/AP on the benchmark and supports **task-level replanning** and **state-level rollback** in real-world demos with a VLA (e.g., π₀).
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## Repository layout
 
-## What's New
+| Path | Description |
+|------|-------------|
+| `index.html` | Main project page (hero, videos, paper sections, BibTeX) |
+| `static/css/`, `static/js/` | Styles and scripts |
+| `static/images/` | Figures, teaser, favicon |
+| `static/videos/` | Real-world and simulation demo videos |
+| `static/paper-body-fragments.html` | Generated HTML for collapsible paper sections |
+| `scripts/build_paper_body.py` | Converts `paper/sec/*.tex` → HTML fragments |
+| `scripts/inject_paper_html.py` | Injects fragments into `index.html` |
+| `scripts/cite_map.py` | BibTeX key → numeric citation mapping for the page |
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+To regenerate the long-form paper text on the site (when LaTeX sources under your `paper/sec` tree change):
 
-## Components
+```bash
+cd scripts
+python build_paper_body.py
+python inject_paper_html.py
+```
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+## Local preview
 
-## Customization
+Open `index.html` in a browser, or use any static server from the repo root, for example:
 
-The HTML file has TODO comments showing what to replace:
+```bash
+python -m http.server 8000
+```
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
-
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+Then visit `http://localhost:8000`.
 
 ## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+- Page structure derives from the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) and the [Nerfies](https://nerfies.github.io/) project page (see footer on the website).
+
+## License
+
+Website content is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).

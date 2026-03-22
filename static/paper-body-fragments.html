@@ -23,9 +23,9 @@ At the task level, RC-NF serves as a trigger for the high-level module, bridging
 <!-- END related -->
 
 <!-- BEGIN method -->
-<figure class="paper-figure">
-<img src="static/images/method.png" alt="Framework overview" loading="lazy" width="1600" height="720">
-<figcaption class="is-size-7 has-text-grey">Overview of our framework. Our Robot-Conditioned Normalizing Flow (RC-NF) operates as a real-time runtime monitor for robotic manipulation tasks. (Left) SAM2 extracts object masks from video streaming, which are then grid-sampled into point sets. Task prompts are encoded using spherical uniform encoding, and robot proprioception provides joint, gripper, and pose states. (Center) Our RC-NF leverages these signals as conditions within the affine coupling layers in the proposed RCPQNet (Sec . [sec:RCPQNet]) to apply $K$ invertible transformations and compute anomaly scores for the current task. (Right) When the anomaly score exceeds the threshold, the Anomaly Detection and Handling module triggers corrective behaviors by task replanning for task-level OOD and task rollback for state-level OOD.</figcaption>
+<figure class="paper-figure paper-figure-method-overview">
+<img src="static/images/method.png" alt="Overview of our framework. Our Robot-Conditioned Normalizing Flow (RC-NF) operates as a real-time runtime monitor for robotic manipulation tasks." loading="lazy" width="1600" height="720">
+<figcaption class="is-size-7 has-text-grey">Overview of our framework. Our Robot-Conditioned Normalizing Flow (RC-NF) operates as a real-time runtime monitor for robotic manipulation tasks.</figcaption>
 </figure>
 <h4 class="title is-5 paper-subsection">Preliminary</h4>
 <p><strong>Normalizing Flow (NF)</strong> establishes a bidirectional mapping between the complex distribution \(\mathcal{X}\) and a simple probability distribution \(\mathcal{Z}\) via a sequence of invertible transformations \(f\), enabling explicit probability density estimation:</p>
