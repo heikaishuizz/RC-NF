@@ -211,7 +211,7 @@ tect failures without failure data? uncertainty-aware runtime
 failure detection for imitation learning policies. In Proceed
 ings of Robotics: Science and Systems (RSS), 2025. 2, 3, 5,
 6
-[48] Jiarui Yang, Bin Zhu, Jingjing Chen, and Yu-Gang Jiang.
+[48] [Jiarui Yang](https://flyfaerss.github.io/), [Bin Zhu](https://binzhubz.github.io/), [Jingjing Chen](https://jingjing1.github.io/#teach), and [Yu-Gang Jiang](https://scholar.google.com/citations?user=f3_FP8AAAAAJ).
 Actor-critic for continuous action chunks: A reinforcement
 learning framework for long-horizon robotic manipulation
 with sparse reward. arXiv preprint arXiv:2508.11143, 2025.

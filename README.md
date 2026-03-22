@@ -9,7 +9,7 @@ This repository hosts the **project page** for our paper on real-time anomaly mo
 
 ## Authors
 
-Shijie Zhou<sup>1,2</sup>, Bin Zhu<sup>3</sup>, Jiarui Yang<sup>1,2</sup>, Xiangyu Zhao<sup>1,2</sup>, Jingjing Chen<sup>1,2,*</sup>, Yu-Gang Jiang<sup>1,2</sup>
+Shijie Zhou<sup>1,2</sup>, [Bin Zhu](https://binzhubz.github.io/)<sup>3</sup>, [Jiarui Yang](https://flyfaerss.github.io/)<sup>1,2</sup>, [Xiangyu Zhao](https://xyzhao.top/)<sup>1,2</sup>, [Jingjing Chen](https://jingjing1.github.io/#teach)<sup>1,2,*</sup>, [Yu-Gang Jiang](https://scholar.google.com/citations?user=f3_FP8AAAAAJ)<sup>1,2</sup>
 
 <sup>1</sup> Institute of Trustworthy Embodied AI, Fudan University  
 <sup>2</sup> Shanghai Key Laboratory of Multimodal Embodied AI  
